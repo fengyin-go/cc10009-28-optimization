@@ -35,3 +35,55 @@ body { margin: 0; background: #f6f8fb; color: #1f2937; }
 .error-text { color: #b42318; }
 .status-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 10px; font-size: 12px; color: var(--muted); }
 .legend-item { background: #eef2f7; border-radius: 999px; padding: 2px 10px; }
+
+/* 节点编排面板：依赖图、并行波次、阻塞与未完成步骤 */
+.orchestration-panel { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; margin-bottom: 16px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.panel-head h3 { margin: 0; font-size: 15px; }
+.panel-tools { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.graph-select span { display: block; font-size: 12px; color: var(--muted); }
+.graph-select select { border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; min-width: 160px; }
+.issue-list { margin: 10px 0; font-size: 13px; }
+.issue-title { color: var(--muted); font-size: 12px; }
+.issue-list ul { margin: 6px 0 0; padding-left: 18px; }
+.issue-item { margin-bottom: 4px; }
+.issue-item.error { color: #b42318; }
+.issue-item.warning { color: #b54708; }
+.issue-ok { color: #067647; font-size: 13px; margin: 6px 0; }
+.wave-board { display: flex; gap: 12px; align-items: stretch; overflow-x: auto; padding-bottom: 8px; }
+.wave-column { flex: 1; min-width: 220px; border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: #f8fafc; }
+.wave-column.failed { border-color: #fda29b; background: #fef3f2; }
+.wave-column.running { border-color: #7cc4ff; background: #eff8ff; }
+.wave-column.succeeded { border-color: #74e0a5; background: #ecfdf3; }
+.wave-head { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 8px; }
+.wave-head em { font-style: normal; color: var(--muted); font-size: 12px; }
+.node-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
+.node-card.succeeded { border-left: 4px solid #12b76a; }
+.node-card.running { border-left: 4px solid #2e90fa; }
+.node-card.failed { border-left: 4px solid #f04438; }
+.node-card.blocked { border-left: 4px solid #7a5af8; }
+.node-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+.node-meta { font-size: 12px; color: var(--muted); line-height: 1.5; word-break: break-all; }
+.node-state { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; gap: 6px; flex-wrap: wrap; }
+.state-badge { border-radius: 999px; padding: 2px 8px; font-size: 12px; background: #eef2f7; }
+.state-badge.succeeded { background: #d1fadf; color: #05603a; }
+.state-badge.running { background: #d1e9ff; color: #1849a9; }
+.state-badge.failed { background: #fee4e2; color: #b42318; }
+.state-badge.blocked { background: #e9d7fe; color: #6927da; }
+.node-attempts { font-size: 12px; color: var(--muted); }
+.node-error { color: #b42318; font-size: 12px; margin: 6px 0 0; }
+.node-actions { display: flex; gap: 10px; margin-top: 6px; }
+.node-actions .link:disabled { color: #98a2b3; cursor: not-allowed; }
+.blocked-list { margin: 12px 0; font-size: 13px; }
+.blocked-list h4, .unfinished-list h4 { margin: 0 0 6px; font-size: 13px; }
+.blocked-list ul { margin: 0; padding-left: 18px; }
+.blocked-list li { margin-bottom: 4px; }
+.unfinished-list { margin: 12px 0; font-size: 13px; }
+.unfinished-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.unfinished-tags .legend-item.failed { background: #fee4e2; color: #b42318; }
+.unfinished-tags .legend-item.running { background: #d1e9ff; color: #1849a9; }
+.unfinished-tags .legend-item.idle { background: #eef2f7; }
+.batch-meta, .batch-summary { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.batch-summary.finished { color: #05603a; }
+.batch-summary.running { color: #b54708; }
+.sync-result { max-width: 420px; font-size: 12px; color: var(--muted); }
